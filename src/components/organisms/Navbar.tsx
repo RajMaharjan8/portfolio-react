@@ -1,0 +1,129 @@
+import { useState, useEffect } from "react";
+import { GithubIcon, LinkedinIcon } from "../atoms/Icons";
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Stack", href: "#stack" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
+
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto max-w-6xl px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <a href="#" className="font-bold text-2xl tracking-tight">
+            Raj<span className="text-primary">.</span>
+          </a>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-sfmono text-gray-600 hover:text-primary transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Right: icons + CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="https://github.com/RajMaharjan8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-primary transition-colors"
+              aria-label="GitHub"
+            >
+              <GithubIcon size={18} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/raj-maharjan-a408b7229/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-primary transition-colors"
+              aria-label="LinkedIn"
+            >
+              <LinkedinIcon size={18} />
+            </a>
+            <a
+              href="#contact"
+              className="border border-primary text-primary text-sm px-5 py-2 rounded-full hover:bg-primary hover:text-white transition-all duration-300 font-sfmono"
+            >
+              Hire Me
+            </a>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden flex flex-col gap-1.5 p-1"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
+                menuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
+                menuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
+                menuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 py-4 px-2">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="block py-3 text-sm font-sfmono text-gray-600 hover:text-primary transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-3 inline-block border border-primary text-primary text-sm px-5 py-2 rounded-full font-sfmono"
+            >
+              Hire Me
+            </a>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
