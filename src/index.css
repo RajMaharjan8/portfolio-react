@@ -8,6 +8,14 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  /* Prevent decorative negative-offset elements from creating
+     a horizontal scrollbar on small screens */
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -36,4 +44,41 @@ body {
 }
 .animate-fade-up {
   animation: fadeUp 0.6s ease forwards;
+}
+
+/* Scroll reveal — hidden until in view, then eased into place */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating animation for hero accents */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-float,
+  .animate-bounce,
+  .cursor-blink {
+    animation: none;
+  }
 }

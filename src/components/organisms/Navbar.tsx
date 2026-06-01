@@ -12,11 +12,30 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeId, setActiveId] = useState("");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.querySelector(link.href))
+      .filter((el): el is Element => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(`#${entry.target.id}`);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -40,7 +59,11 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-sfmono text-gray-600 hover:text-primary transition-colors duration-200"
+                className={`relative text-sm font-sfmono transition-colors duration-200 after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:text-primary ${
+                  activeId === link.href
+                    ? "text-primary after:w-full"
+                    : "text-gray-600 after:w-0 hover:after:w-full"
+                }`}
               >
                 {link.label}
               </a>
@@ -101,13 +124,17 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 py-4 px-2">
+          <div className="md:hidden bg-white border-t border-gray-100 py-4 px-2 animate-fade-up">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block py-3 text-sm font-sfmono text-gray-600 hover:text-primary transition-colors"
+                className={`block py-3 text-sm font-sfmono transition-colors border-l-2 pl-3 ${
+                  activeId === link.href
+                    ? "text-primary border-primary"
+                    : "text-gray-600 border-transparent hover:text-primary"
+                }`}
               >
                 {link.label}
               </a>

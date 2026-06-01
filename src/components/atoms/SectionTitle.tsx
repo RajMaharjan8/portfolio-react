@@ -11,7 +11,7 @@ const SectionTitle = ({
   light = false,
   center = false,
 }: SectionTitleProps) => (
-  <div className={`mb-16 ${center ? "text-center" : ""}`}>
+  <div className={`mb-10 sm:mb-16 ${center ? "text-center" : ""}`}>
     {overline && (
       <p className="text-primary font-sfmono text-xs tracking-[0.25em] uppercase mb-3">
         {overline}

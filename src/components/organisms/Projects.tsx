@@ -1,5 +1,6 @@
 import SectionTitle from "../atoms/SectionTitle";
 import ProjectCard from "../molecules/ProjectCard";
+import Reveal from "../atoms/Reveal";
 
 const projects = [
   {
@@ -30,12 +31,18 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 bg-gray-50">
+    <section id="projects" className="py-16 sm:py-24 bg-gray-50">
       <div className="container mx-auto max-w-6xl px-6">
         <SectionTitle overline="03. My Work" title="Things I've built" />
         <div className="grid grid-cols-12 gap-6">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <Reveal
+              key={index}
+              delay={index * 100}
+              className={project.featured ? "col-span-12" : "col-span-12 md:col-span-6"}
+            >
+              <ProjectCard {...project} />
+            </Reveal>
           ))}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import Terminal from "../atoms/Terminal";
 import SectionTitle from "../atoms/SectionTitle";
+import Reveal from "../atoms/Reveal";
 import { Mail, MapPin } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "../atoms/Icons";
 
@@ -32,7 +33,7 @@ const links = [
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-[#0f0f0f]">
+    <section id="contact" className="py-16 sm:py-24 bg-[#0f0f0f]">
       <div className="container mx-auto max-w-6xl px-6">
         <SectionTitle
           overline="05. Contact"
@@ -42,7 +43,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-12 gap-10 items-start">
           {/* Left: Text + links */}
-          <div className="col-span-12 lg:col-span-5">
+          <Reveal className="col-span-12 lg:col-span-5">
             <p className="text-gray-400 font-light text-lg leading-relaxed mb-10">
               Have a project in mind, a backend you need built, or just want to
               talk about why PHP is actually great? My inbox is always open.
@@ -75,10 +76,10 @@ const Contact = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </Reveal>
 
           {/* Right: Terminal */}
-          <div className="col-span-12 lg:col-span-7">
+          <Reveal delay={120} className="col-span-12 lg:col-span-7">
             <Terminal
               dir="raj@portfolio ~/contact"
               command="php artisan make:connection"
@@ -111,7 +112,7 @@ const Contact = () => {
                 Say Hello
               </a>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

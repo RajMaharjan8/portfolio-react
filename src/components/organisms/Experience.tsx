@@ -1,5 +1,6 @@
 import Block from "../molecules/Block";
 import SectionTitle from "../atoms/SectionTitle";
+import Reveal from "../atoms/Reveal";
 import { GraduationCap, Briefcase } from "lucide-react";
 
 const education = [
@@ -26,13 +27,13 @@ const experience = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 bg-white">
+    <section id="experience" className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-6xl px-6">
         <SectionTitle overline="04. Background" title="Education & Experience" />
 
-        <div className="grid grid-cols-12 gap-10">
+        <div className="grid grid-cols-12 gap-12 md:gap-10">
           {/* Education */}
-          <div className="col-span-12 md:col-span-6">
+          <Reveal className="col-span-12 md:col-span-6">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-9 h-9 bg-red-50 rounded-xl flex items-center justify-center">
                 <GraduationCap size={18} className="text-primary" />
@@ -49,10 +50,10 @@ const Experience = () => {
                 isLast={index === education.length - 1}
               />
             ))}
-          </div>
+          </Reveal>
 
           {/* Experience */}
-          <div className="col-span-12 md:col-span-6">
+          <Reveal delay={120} className="col-span-12 md:col-span-6">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-9 h-9 bg-red-50 rounded-xl flex items-center justify-center">
                 <Briefcase size={18} className="text-primary" />
@@ -81,7 +82,7 @@ const Experience = () => {
                 Available for full-time roles & freelance projects.
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

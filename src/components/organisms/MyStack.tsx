@@ -1,6 +1,7 @@
 import Terminal from "../atoms/Terminal";
 import Tag from "../atoms/Tag";
 import SectionTitle from "../atoms/SectionTitle";
+import Reveal from "../atoms/Reveal";
 
 const stackCategories = [
   {
@@ -23,13 +24,13 @@ const stackCategories = [
 
 const MyStack = () => {
   return (
-    <section id="stack" className="py-24 bg-white">
+    <section id="stack" className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-6xl px-6">
         <SectionTitle overline="02. Tech Stack" title="What I work with" />
 
         <div className="grid grid-cols-12 gap-10 items-start">
           {/* Terminal */}
-          <div className="col-span-12 lg:col-span-5">
+          <Reveal className="col-span-12 lg:col-span-5">
             <Terminal
               dir="raj@portfolio ~/stack"
               command="php artisan list:skills"
@@ -48,10 +49,10 @@ const MyStack = () => {
                 "  ✓ Git, Linux",
               ]}
             />
-          </div>
+          </Reveal>
 
           {/* Skill tags by category */}
-          <div className="col-span-12 lg:col-span-7 space-y-7">
+          <Reveal delay={120} className="col-span-12 lg:col-span-7 space-y-7">
             {stackCategories.map((cat) => (
               <div key={cat.label}>
                 <p className="font-sfmono text-xs text-gray-400 tracking-[0.2em] uppercase mb-3">
@@ -73,7 +74,7 @@ const MyStack = () => {
                  Livewire 3
               </span>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

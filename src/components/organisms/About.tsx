@@ -1,5 +1,6 @@
 import Terminal from "../atoms/Terminal";
 import SectionTitle from "../atoms/SectionTitle";
+import Reveal from "../atoms/Reveal";
 import { Code2, Database, Layers } from "lucide-react";
 
 const services = [
@@ -31,11 +32,11 @@ const stats = [
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-gray-50">
+    <section id="about" className="py-16 sm:py-24 bg-gray-50">
       <div className="container mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Left: Text */}
-          <div className="col-span-12 lg:col-span-5">
+          <Reveal className="col-span-12 lg:col-span-5">
             <SectionTitle overline="01. About Me" title="Who am I?" />
 
             <div className="space-y-4 text-gray-500 font-light text-lg leading-relaxed mb-8">
@@ -77,10 +78,10 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
 
           {/* Right: Terminal + service cards */}
-          <div className="col-span-12 lg:col-span-7 space-y-5">
+          <Reveal delay={120} className="col-span-12 lg:col-span-7 space-y-5">
             <Terminal
               dir="raj@portfolio ~/about"
               command="cat me.txt"
@@ -114,7 +115,7 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

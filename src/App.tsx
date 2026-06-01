@@ -6,6 +6,7 @@ import Projects from "./components/organisms/Projects";
 import Experience from "./components/organisms/Experience";
 import Contact from "./components/organisms/Contact";
 import Footer from "./components/organisms/Footer";
+import BackToTop from "./components/atoms/BackToTop";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Experience />
       <Contact />
       <Footer />
+      <BackToTop />
     </>
   );
 }

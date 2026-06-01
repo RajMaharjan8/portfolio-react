@@ -18,7 +18,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   if (featured) {
     return (
-      <div className="col-span-12 p-8 bg-white rounded-3xl border border-gray-100 hover:border-red-100 hover:shadow-xl transition-all duration-300 group">
+      <div className="h-full p-6 sm:p-8 bg-white rounded-3xl border border-gray-100 hover:border-red-100 hover:shadow-xl transition-all duration-300 group">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Terminal preview */}
           <div className="lg:w-1/2 bg-[#1E1E1E] rounded-2xl p-5 font-sfmono text-sm">
@@ -97,7 +97,7 @@ const ProjectCard = ({
   }
 
   return (
-    <div className="col-span-12 md:col-span-6 p-6 bg-white rounded-2xl border border-gray-100 hover:border-red-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+    <div className="h-full p-6 bg-white rounded-2xl border border-gray-100 hover:border-red-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group flex flex-col">
       {/* Top row */}
       <div className="flex justify-between items-start mb-5">
         <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center border border-red-100">
