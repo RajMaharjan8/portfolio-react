@@ -4,6 +4,18 @@ import Reveal from "../atoms/Reveal";
 
 const projects = [
   {
+    title: "RJCMS",
+    label: "Open Source · Packagist",
+    description:
+      "A lightweight Laravel CMS package for rapidly building admin dashboards with minimal frontend code. Published on Packagist and installable via Composer",
+    tags: ["Laravel", "PHP", "Composer", "MIT"],
+    install: "composer require rjcodes/rjcms",
+    packagist: "https://packagist.org/packages/rjcodes/rjcms",
+    repo: "https://github.com/RajMaharjan8/rjcms",
+    installs: "11+",
+    featured: true,
+  },
+  {
     title: "Learning Management System",
     description:
       "Worked on creating RESTful APIs for an LMS system using Laravel. Explored different packages like Spatie Media Library, Roles and Permissions, and many others. Worked on projects Udaan, SmartAcademy, and Gurumantra",

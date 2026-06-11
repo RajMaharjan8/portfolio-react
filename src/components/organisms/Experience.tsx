@@ -14,6 +14,11 @@ const education = [
     from: "IIMS College",
     location: "Putalisadak, Kathmandu",
   },
+  {
+    title: "MBA Project Management (On-Going)",
+    from: "Islington College",
+    location: "Putalisadak, Kathmandu",
+  },
 ];
 
 const experience = [
@@ -29,7 +34,10 @@ const Experience = () => {
   return (
     <section id="experience" className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-6xl px-6">
-        <SectionTitle overline="04. Background" title="Education & Experience" />
+        <SectionTitle
+          overline="04. Background"
+          title="Education & Experience"
+        />
 
         <div className="grid grid-cols-12 gap-12 md:gap-10">
           {/* Education */}

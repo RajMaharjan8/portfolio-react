@@ -25,7 +25,7 @@ const services = [
 ];
 
 const stats = [
-  { num: "2+", label: "Yrs Experience" },
+  { num: "3+", label: "Yrs Experience" },
   { num: "20+", label: "Projects Built" },
   { num: "∞", label: "Coffee Drunk" },
 ];

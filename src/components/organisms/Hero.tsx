@@ -1,5 +1,5 @@
 import Button from "../atoms/Button";
-import Profile from "../../assets/raj.JPG";
+import Profile from "../../assets/me.png";
 import { ArrowDown } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "../atoms/Icons";
 
@@ -28,6 +28,13 @@ const Hero = ({ name }: HeroProps) => {
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-red-100 rounded-full" />
               </span>
             </h1>
+
+            {/* Fun nickname / handle */}
+            <p className="inline-flex items-center gap-2 font-sfmono text-xs sm:text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded-full px-3 py-1 mb-5 hover:border-primary hover:text-primary transition-colors duration-300">
+              <span className="text-primary">$</span> whoami
+              <span className="text-gray-400">→</span>
+              <span className="font-semibold text-gray-700">RjCode</span>
+            </p>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-400 mb-6 font-sfmono">
               Backend Developer
@@ -99,7 +106,7 @@ const Hero = ({ name }: HeroProps) => {
 
               {/* Experience badge */}
               <div className="absolute -top-3 -left-3 sm:-left-6 bg-primary text-white rounded-2xl px-4 py-3 font-sfmono text-center shadow-lg">
-                <p className="text-2xl font-bold leading-none">2+</p>
+                <p className="text-2xl font-bold leading-none">3+</p>
                 <p className="text-xs mt-1 opacity-80">Years Exp</p>
               </div>
             </div>

@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { GithubIcon, LinkedinIcon } from "../atoms/Icons";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Stack", href: "#stack" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about", is_target: false },
+  { label: "Stack", href: "#stack", is_target: false },
+  { label: "Projects", href: "#projects", is_target: false },
+  { label: "Experience", href: "#experience", is_target: false },
+  { label: "Contact", href: "#contact", is_target: false },
+  { label: "Blogs", href: "https://rjblogs.vercel.app/", is_target: true },
 ];
 
 const Navbar = () => {
@@ -22,6 +23,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const sections = navLinks
+      // Only in-page anchors map to sections; skip external (is_target) links
+      .filter((link) => !link.is_target)
       .map((link) => document.querySelector(link.href))
       .filter((el): el is Element => el !== null);
 
@@ -59,6 +62,8 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
+                target={link.is_target ? "_blank" : undefined}
+                rel={link.is_target ? "noopener noreferrer" : undefined}
                 className={`relative text-sm font-sfmono transition-colors duration-200 after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:text-primary ${
                   activeId === link.href
                     ? "text-primary after:w-full"
@@ -129,6 +134,8 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
+                target={link.is_target ? "_blank" : undefined}
+                rel={link.is_target ? "noopener noreferrer" : undefined}
                 onClick={() => setMenuOpen(false)}
                 className={`block py-3 text-sm font-sfmono transition-colors border-l-2 pl-3 ${
                   activeId === link.href

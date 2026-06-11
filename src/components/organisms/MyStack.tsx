@@ -14,7 +14,7 @@ const stackCategories = [
   },
   {
     label: "Frontend",
-    items: ["Vue.js 3", "React", "Blade", "Tailwind CSS", "Bootstrap"],
+    items: ["React", "Blade", "Tailwind CSS", "Bootstrap"],
   },
   {
     label: "Tools & DevOps",
@@ -39,7 +39,7 @@ const MyStack = () => {
                 "",
                 "BACKEND",
                 "  ✓ Laravel (Primary Framework)",
-                "  ✓ RESTful API Design",
+                "  ✓ RESTful API",
                 "  ✓ Auth: Sanctum & Passport",
                 "",
                 "DATABASE",
@@ -71,7 +71,7 @@ const MyStack = () => {
               <span className="text-primary">//</span> Always learning. Currently
               exploring:{" "}
               <span className="text-gray-600 font-medium">
-                 Livewire 3
+                 Next JS
               </span>
             </div>
           </Reveal>
