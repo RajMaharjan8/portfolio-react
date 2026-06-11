@@ -41,7 +41,7 @@ const Contact = () => {
           light
         />
 
-        <div className="grid grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-12 gap-y-10 lg:gap-10 items-start">
           {/* Left: Text + links */}
           <Reveal className="col-span-12 lg:col-span-5">
             <p className="text-gray-400 font-light text-lg leading-relaxed mb-10">

@@ -14,7 +14,7 @@ const Hero = ({ name }: HeroProps) => {
       className="min-h-screen flex items-center pt-16 bg-white"
     >
       <div className="container mx-auto max-w-6xl px-6 w-full">
-        <div className="grid grid-cols-12 gap-10 lg:gap-6 items-center">
+        <div className="grid grid-cols-12 gap-y-10 lg:gap-6 items-center">
           {/* Left: Content */}
           <div className="col-span-12 lg:col-span-6 text-center lg:text-left animate-fade-up">
             <p className="font-sfmono text-primary text-xs tracking-[0.25em] uppercase mb-5">
@@ -53,11 +53,11 @@ const Hero = ({ name }: HeroProps) => {
             </div>
 
             {/* Social links */}
-            <div className="flex items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-3">
               <span className="font-sfmono text-xs text-gray-300 tracking-widest">
                 FIND ME ON
               </span>
-              <div className="w-8 h-px bg-gray-200" />
+              <div className="hidden sm:block w-8 h-px bg-gray-200" />
               <div className="flex items-center gap-5">
                 <a
                   href="https://github.com/RajMaharjan8"

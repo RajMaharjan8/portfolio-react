@@ -46,7 +46,7 @@ const Projects = () => {
     <section id="projects" className="py-16 sm:py-24 bg-gray-50">
       <div className="container mx-auto max-w-6xl px-6">
         <SectionTitle overline="03. My Work" title="Things I've built" />
-        <div className="grid grid-cols-12 gap-6">
+        <div className="grid grid-cols-12 gap-y-6 md:gap-6">
           {projects.map((project, index) => (
             <Reveal
               key={index}

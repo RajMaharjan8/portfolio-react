@@ -28,7 +28,7 @@ const MyStack = () => {
       <div className="container mx-auto max-w-6xl px-6">
         <SectionTitle overline="02. Tech Stack" title="What I work with" />
 
-        <div className="grid grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-12 gap-y-10 lg:gap-10 items-start">
           {/* Terminal */}
           <Reveal className="col-span-12 lg:col-span-5">
             <Terminal

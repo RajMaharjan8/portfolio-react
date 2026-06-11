@@ -34,7 +34,7 @@ const About = () => {
   return (
     <section id="about" className="py-16 sm:py-24 bg-gray-50">
       <div className="container mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-12 gap-10 lg:gap-12 items-start">
+        <div className="grid grid-cols-12 gap-y-10 lg:gap-12 items-start">
           {/* Left: Text */}
           <Reveal className="col-span-12 lg:col-span-5">
             <SectionTitle overline="01. About Me" title="Who am I?" />
@@ -101,7 +101,7 @@ const About = () => {
                   key={service.title}
                   className="flex gap-4 p-5 bg-white rounded-2xl border border-gray-100 hover:border-red-100 hover:shadow-md transition-all duration-300 group"
                 >
-                  <div className="flex-shrink-0 w-11 h-11 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-red-100 transition-colors">
+                  <div className="shrink-0 w-11 h-11 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-red-100 transition-colors">
                     {service.icon}
                   </div>
                   <div>
