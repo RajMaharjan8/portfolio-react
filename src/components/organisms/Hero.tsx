@@ -50,8 +50,8 @@ const Hero = ({ name }: HeroProps) => {
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
               <Button
                 text="Download CV"
-                href="/CV.pdf"
-                download="Raj-Maharjan-CV.pdf"
+                href="/resume.pdf"
+                download="Raj-Maharjan-Resume.pdf"
               />
               <Button text="Contact Me" variant="outline" href="#contact" />
             </div>
