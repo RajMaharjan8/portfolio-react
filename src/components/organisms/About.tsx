@@ -41,7 +41,9 @@ const About = () => {
 
             <div className="space-y-4 text-gray-500 font-light text-lg leading-relaxed mb-8">
               <p>
-                I'm a backend developer based in{" "}
+                I'm{" "}
+                <span className="font-medium text-gray-700">Raj Maharjan</span>,
+                a Laravel backend developer based in{" "}
                 <span className="text-primary font-medium">
                   Kathmandu, Nepal
                 </span>

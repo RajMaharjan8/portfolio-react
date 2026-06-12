@@ -37,7 +37,7 @@ const Hero = ({ name }: HeroProps) => {
             </p>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-400 mb-6 font-sfmono">
-              Backend Developer
+              Laravel Backend Developer
             </h2>
 
             <p className="text-gray-500 font-light text-base sm:text-lg leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
