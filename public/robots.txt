@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rajmaharjan2002.com.np/sitemap.xml

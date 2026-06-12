@@ -48,7 +48,11 @@ const Hero = ({ name }: HeroProps) => {
 
             {/* CTAs */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
-              <Button text="Download CV" />
+              <Button
+                text="Download CV"
+                href="/CV.pdf"
+                download="Raj-Maharjan-CV.pdf"
+              />
               <Button text="Contact Me" variant="outline" href="#contact" />
             </div>
 
@@ -91,7 +95,7 @@ const Hero = ({ name }: HeroProps) => {
               <div className="bg-primary rounded-bl-[60px] rounded-tr-[60px] sm:rounded-bl-[80px] sm:rounded-tr-[80px] h-96 w-72 sm:h-120 sm:w-95 max-w-full overflow-hidden">
                 <img
                   src={Profile}
-                  alt={name}
+                  alt={`${name} Maharjan — Backend Developer based in Kathmandu, Nepal`}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>

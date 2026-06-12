@@ -5,6 +5,8 @@ interface ButtonProps {
   onClick?: () => void;
   variant?: "primary" | "outline";
   href?: string;
+  /** When set, the link downloads the file (optionally with this filename) */
+  download?: boolean | string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -12,6 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   variant = "primary",
   href,
+  download,
 }) => {
   const base =
     "inline-flex items-center justify-center text-base rounded-3xl px-8 py-3 font-light cursor-pointer transition-all duration-300 ease-in-out";
@@ -25,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <a href={href} className={`${base} ${styles[variant]}`}>
+      <a href={href} download={download} className={`${base} ${styles[variant]}`}>
         {text}
       </a>
     );
