@@ -32,17 +32,20 @@ const stats = [
 
 const About = () => {
   return (
-    <section id="about" className="py-16 sm:py-24 bg-gray-50">
+    <section id="about" className="py-16 sm:py-24 bg-gray-50 dark:bg-[#141414]">
       <div className="container mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-12 gap-y-10 lg:gap-12 items-start">
           {/* Left: Text */}
           <Reveal className="col-span-12 lg:col-span-5">
             <SectionTitle overline="01. About Me" title="Who am I?" />
 
-            <div className="space-y-4 text-gray-500 font-light text-lg leading-relaxed mb-8">
+            <div className="space-y-4 text-gray-500 dark:text-gray-400 font-light text-lg leading-relaxed mb-8">
               <p>
                 I'm{" "}
-                <span className="font-medium text-gray-700">Raj Maharjan</span>,
+                <span className="font-medium text-gray-700 dark:text-gray-200">
+                  Raj Maharjan
+                </span>
+                ,
                 a Laravel backend developer based in{" "}
                 <span className="text-primary font-medium">
                   Kathmandu, Nepal
@@ -71,7 +74,7 @@ const About = () => {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="text-center p-4 bg-white rounded-2xl border border-gray-100 hover:border-red-100 transition-colors"
+                  className="text-center p-4 bg-white dark:bg-[#1a1a1a] rounded-2xl border border-gray-100 dark:border-white/10 hover:border-red-100 transition-colors"
                 >
                   <p className="text-3xl font-bold text-primary">{stat.num}</p>
                   <p className="text-xs text-gray-400 font-sfmono mt-1">
@@ -101,16 +104,16 @@ const About = () => {
               {services.map((service) => (
                 <div
                   key={service.title}
-                  className="flex gap-4 p-5 bg-white rounded-2xl border border-gray-100 hover:border-red-100 hover:shadow-md transition-all duration-300 group"
+                  className="flex gap-4 p-5 bg-white dark:bg-[#1a1a1a] rounded-2xl border border-gray-100 dark:border-white/10 hover:border-red-100 hover:shadow-md transition-all duration-300 group"
                 >
-                  <div className="shrink-0 w-11 h-11 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-red-100 transition-colors">
+                  <div className="shrink-0 w-11 h-11 bg-red-50 dark:bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-red-100 transition-colors">
                     {service.icon}
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">
+                    <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-1">
                       {service.title}
                     </h4>
-                    <p className="text-gray-500 text-sm font-light leading-relaxed">
+                    <p className="text-gray-500 dark:text-gray-400 text-sm font-light leading-relaxed">
                       {service.description}
                     </p>
                   </div>

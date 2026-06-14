@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { GithubIcon, LinkedinIcon } from "../atoms/Icons";
+import ThemeToggle from "../atoms/ThemeToggle";
 
 const navLinks = [
   { label: "About", href: "#about", is_target: false },
@@ -45,14 +46,17 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm"
+          ? "bg-white/95 dark:bg-[#0d0d0d]/95 backdrop-blur-sm border-b border-gray-100 dark:border-white/10 shadow-sm"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto max-w-6xl px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="font-bold text-2xl tracking-tight">
+          <a
+            href="#"
+            className="font-bold text-2xl tracking-tight text-gray-900 dark:text-white"
+          >
             Raj<span className="text-primary">.</span>
           </a>
 
@@ -67,7 +71,7 @@ const Navbar = () => {
                 className={`relative text-sm font-sfmono transition-colors duration-200 after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:text-primary ${
                   activeId === link.href
                     ? "text-primary after:w-full"
-                    : "text-gray-600 after:w-0 hover:after:w-full"
+                    : "text-gray-600 dark:text-gray-300 after:w-0 hover:after:w-full"
                 }`}
               >
                 {link.label}
@@ -101,35 +105,39 @@ const Navbar = () => {
             >
               Hire Me
             </a>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden flex flex-col gap-1.5 p-1"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
-                menuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
-                menuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
-                menuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            />
-          </button>
+          {/* Mobile: theme toggle + hamburger */}
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              className="flex flex-col gap-1.5 p-1"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span
+                className={`block w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transition-all duration-300 ${
+                  menuOpen ? "rotate-45 translate-y-2" : ""
+                }`}
+              />
+              <span
+                className={`block w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transition-all duration-300 ${
+                  menuOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transition-all duration-300 ${
+                  menuOpen ? "-rotate-45 -translate-y-2" : ""
+                }`}
+              />
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 py-4 px-2 animate-fade-up">
+          <div className="md:hidden bg-white dark:bg-[#0d0d0d] border-t border-gray-100 dark:border-white/10 py-4 px-2 animate-fade-up">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -140,7 +148,7 @@ const Navbar = () => {
                 className={`block py-3 text-sm font-sfmono transition-colors border-l-2 pl-3 ${
                   activeId === link.href
                     ? "text-primary border-primary"
-                    : "text-gray-600 border-transparent hover:text-primary"
+                    : "text-gray-600 dark:text-gray-300 border-transparent hover:text-primary"
                 }`}
               >
                 {link.label}

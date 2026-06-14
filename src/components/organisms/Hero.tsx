@@ -11,7 +11,7 @@ const Hero = ({ name }: HeroProps) => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center pt-16 bg-white"
+      className="min-h-screen flex items-center pt-16 bg-white dark:bg-[#0d0d0d]"
     >
       <div className="container mx-auto max-w-6xl px-6 w-full">
         <div className="grid grid-cols-12 gap-y-10 lg:gap-6 items-center">
@@ -21,7 +21,7 @@ const Hero = ({ name }: HeroProps) => {
               Hello, World! 👋
             </p>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-none mb-3">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-none mb-3 text-gray-900 dark:text-white">
               I'm{" "}
               <span className="text-primary relative inline-block">
                 {name}
@@ -30,17 +30,17 @@ const Hero = ({ name }: HeroProps) => {
             </h1>
 
             {/* Fun nickname / handle */}
-            <p className="inline-flex items-center gap-2 font-sfmono text-xs sm:text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded-full px-3 py-1 mb-5 hover:border-primary hover:text-primary transition-colors duration-300">
+            <p className="inline-flex items-center gap-2 font-sfmono text-xs sm:text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-full px-3 py-1 mb-5 hover:border-primary hover:text-primary transition-colors duration-300">
               <span className="text-primary">$</span> whoami
               <span className="text-gray-400">→</span>
-              <span className="font-semibold text-gray-700">RjCode</span>
+              <span className="font-semibold text-gray-700 dark:text-gray-200">RjCode</span>
             </p>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-400 mb-6 font-sfmono">
               Laravel Backend Developer
             </h2>
 
-            <p className="text-gray-500 font-light text-base sm:text-lg leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
+            <p className="text-gray-500 dark:text-gray-400 font-light text-base sm:text-lg leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
               I craft robust, scalable APIs and web applications with{" "}
               <span className="text-primary font-medium">Laravel</span>. Turning
               complex backend problems into clean, elegant solutions.
@@ -61,7 +61,7 @@ const Hero = ({ name }: HeroProps) => {
               <span className="font-sfmono text-xs text-gray-300 tracking-widest">
                 FIND ME ON
               </span>
-              <div className="hidden sm:block w-8 h-px bg-gray-200" />
+              <div className="hidden sm:block w-8 h-px bg-gray-200 dark:bg-white/15" />
               <div className="flex items-center gap-5">
                 <a
                   href="https://github.com/RajMaharjan8"
@@ -101,9 +101,9 @@ const Hero = ({ name }: HeroProps) => {
               </div>
 
               {/* Floating role badge */}
-              <div className="absolute -bottom-4 -left-3 sm:-bottom-5 sm:-left-8 bg-white border border-gray-100 shadow-xl rounded-2xl px-4 py-3 sm:px-5 sm:py-4 font-sfmono animate-float">
+              <div className="absolute -bottom-4 -left-3 sm:-bottom-5 sm:-left-8 bg-white dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/10 shadow-xl rounded-2xl px-4 py-3 sm:px-5 sm:py-4 font-sfmono animate-float">
                 <p className="text-xs text-gray-400 mb-1">Current Role</p>
-                <p className="text-sm font-bold text-gray-800">
+                <p className="text-sm font-bold text-gray-800 dark:text-gray-100">
                   Laravel Dev
                 </p>
               </div>

@@ -24,7 +24,7 @@ const stackCategories = [
 
 const MyStack = () => {
   return (
-    <section id="stack" className="py-16 sm:py-24 bg-white">
+    <section id="stack" className="py-16 sm:py-24 bg-white dark:bg-[#0d0d0d]">
       <div className="container mx-auto max-w-6xl px-6">
         <SectionTitle overline="02. Tech Stack" title="What I work with" />
 
@@ -67,10 +67,10 @@ const MyStack = () => {
             ))}
 
             {/* Fun note */}
-            <div className="mt-4 p-4 bg-gray-50 rounded-2xl border border-gray-100 font-sfmono text-sm text-gray-400">
+            <div className="mt-4 p-4 bg-gray-50 dark:bg-white/5 rounded-2xl border border-gray-100 dark:border-white/10 font-sfmono text-sm text-gray-400">
               <span className="text-primary">//</span> Always learning. Currently
               exploring:{" "}
-              <span className="text-gray-600 font-medium">
+              <span className="text-gray-600 dark:text-gray-300 font-medium">
                  Next JS
               </span>
             </div>

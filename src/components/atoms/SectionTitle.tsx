@@ -19,7 +19,7 @@ const SectionTitle = ({
     )}
     <h2
       className={`text-4xl md:text-5xl font-bold leading-tight ${
-        light ? "text-white" : "text-gray-900"
+        light ? "text-white" : "text-gray-900 dark:text-white"
       }`}
     >
       {title}

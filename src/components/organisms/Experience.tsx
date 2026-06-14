@@ -32,7 +32,7 @@ const experience = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-16 sm:py-24 bg-white">
+    <section id="experience" className="py-16 sm:py-24 bg-white dark:bg-[#0d0d0d]">
       <div className="container mx-auto max-w-6xl px-6">
         <SectionTitle
           overline="04. Background"
@@ -43,10 +43,12 @@ const Experience = () => {
           {/* Education */}
           <Reveal className="col-span-12 md:col-span-6">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-9 h-9 bg-red-50 rounded-xl flex items-center justify-center">
+              <div className="w-9 h-9 bg-red-50 dark:bg-primary/10 rounded-xl flex items-center justify-center">
                 <GraduationCap size={18} className="text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Education</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+                Education
+              </h3>
             </div>
 
             {education.map((item, index) => (
@@ -63,10 +65,12 @@ const Experience = () => {
           {/* Experience */}
           <Reveal delay={120} className="col-span-12 md:col-span-6">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-9 h-9 bg-red-50 rounded-xl flex items-center justify-center">
+              <div className="w-9 h-9 bg-red-50 dark:bg-primary/10 rounded-xl flex items-center justify-center">
                 <Briefcase size={18} className="text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Experience</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+                Experience
+              </h3>
             </div>
 
             {experience.map((item, index) => (
@@ -81,12 +85,14 @@ const Experience = () => {
             ))}
 
             {/* Open to work card */}
-            <div className="mt-2 ml-8 p-5 bg-red-50 rounded-2xl border border-red-100">
+            <div className="mt-2 ml-8 p-5 bg-red-50 dark:bg-primary/10 rounded-2xl border border-red-100 dark:border-primary/20">
               <p className="font-sfmono text-xs text-primary tracking-widest uppercase mb-1">
                 Status
               </p>
-              <p className="font-bold text-gray-900">Open to Opportunities</p>
-              <p className="text-sm text-gray-500 font-light mt-1">
+              <p className="font-bold text-gray-900 dark:text-gray-100">
+                Open to Opportunities
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 font-light mt-1">
                 Available for full-time roles & freelance projects.
               </p>
             </div>

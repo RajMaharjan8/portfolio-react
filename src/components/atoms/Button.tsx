@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
     primary:
       "bg-primary text-white shadow-lg hover:bg-black hover:shadow-none",
     outline:
-      "border border-gray-300 text-gray-700 hover:border-primary hover:text-primary",
+      "border border-gray-300 dark:border-white/20 text-gray-700 dark:text-gray-200 hover:border-primary hover:text-primary",
   };
 
   if (href) {

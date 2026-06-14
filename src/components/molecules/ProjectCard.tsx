@@ -35,7 +35,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   if (featured) {
     return (
-      <div className="h-full p-6 sm:p-8 bg-white rounded-3xl border border-gray-100 hover:border-red-100 hover:shadow-xl transition-all duration-300 group">
+      <div className="h-full p-6 sm:p-8 bg-white dark:bg-[#1a1a1a] rounded-3xl border border-gray-100 dark:border-white/10 hover:border-red-100 hover:shadow-xl transition-all duration-300 group">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Terminal preview */}
           <div className="lg:w-1/2 bg-[#1E1E1E] rounded-2xl p-5 font-sfmono text-sm">
@@ -103,10 +103,10 @@ const ProjectCard = ({
                 {install && <Package size={14} />}
                 {label ?? "Featured Project"}
               </p>
-              <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors duration-300">
                 {title}
               </h3>
-              <p className="text-gray-500 font-light leading-relaxed mb-6">
+              <p className="text-gray-500 dark:text-gray-400 font-light leading-relaxed mb-6">
                 {description}
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
@@ -142,7 +142,7 @@ const ProjectCard = ({
                     href={repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 text-sm font-sfmono px-5 py-2.5 rounded-full hover:border-primary hover:text-primary transition-colors duration-300"
+                    className="inline-flex items-center gap-2 border border-gray-300 dark:border-white/20 text-gray-700 dark:text-gray-200 text-sm font-sfmono px-5 py-2.5 rounded-full hover:border-primary hover:text-primary transition-colors duration-300"
                   >
                     <GithubIcon size={15} />
                     Source
@@ -157,10 +157,10 @@ const ProjectCard = ({
   }
 
   return (
-    <div className="h-full p-6 bg-white rounded-2xl border border-gray-100 hover:border-red-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+    <div className="h-full p-6 bg-white dark:bg-[#1a1a1a] rounded-2xl border border-gray-100 dark:border-white/10 hover:border-red-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group flex flex-col">
       {/* Top row */}
       <div className="flex justify-between items-start mb-5">
-        <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center border border-red-100">
+        <div className="w-10 h-10 bg-red-50 dark:bg-primary/10 rounded-xl flex items-center justify-center border border-red-100 dark:border-primary/20">
           <span className="text-primary font-sfmono font-bold">
             {title.charAt(0)}
           </span>
@@ -189,10 +189,10 @@ const ProjectCard = ({
         </div>
       </div>
 
-      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors duration-300">
         {title}
       </h3>
-      <p className="text-gray-500 font-light text-sm leading-relaxed flex-1 mb-5">
+      <p className="text-gray-500 dark:text-gray-400 font-light text-sm leading-relaxed flex-1 mb-5">
         {description}
       </p>
 
