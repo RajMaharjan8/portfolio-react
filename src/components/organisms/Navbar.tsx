@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Projects", href: "#projects", is_target: false },
   { label: "Experience", href: "#experience", is_target: false },
   { label: "Contact", href: "#contact", is_target: false },
-  { label: "Blogs", href: "https://rjblogs.vercel.app/", is_target: true },
+  { label: "Blogs", href: "https://blog.rajmaharjan2002.com.np/", is_target: true },
 ];
 
 const Navbar = () => {
